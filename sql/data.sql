@@ -1,0 +1,22 @@
+INSERT INTO shoes (name, brand, colour, size, price, in_stock, img_src)
+VALUES
+    ('Scott formal shoe', 'GINO PAOLI', 'Grey', 6, 799, 12, './public/images/shoes/scott-formal-shoe.png'),
+    ('Nanni 38 loafer', 'MAZERATA', 'Tan', 8, 559, 8, './public/images/shoes/nanni-38-loafer.png'),
+    ('Miraylle', 'ALDO', 'Brown', 10, 2199, 5, './public/images/shoes/miraylle.png'),
+    ('Percival', 'ALDO', 'Burgundy', 7, 1649, 3, './public/images/shoes/percival.png'),
+    ('Nanni 36 - loafer', 'MAZERATA', 'Black', 6, 664, 7, './public/images/shoes/nanni-36-loafer.png'),
+    ('Magio 72 formal', 'MAZERATA', 'Dark Brown', 8, 559, 14, './public/images/shoes/magio-72-formal.png'),
+    ('Monetto', 'ALDO', 'Grey', 9, 1649, 4, './public/images/shoes/monetto.png'),
+    ('Sergio formal shoe', 'GINO PAOLI', 'Brown', 7, 799, 9, './public/images/shoes/sergio-formal-shoe.png'),
+    ('Killyon', 'CALL IT SPRING', 'Brown', 8, 899, 11, './public/images/shoes/killyon.png'),
+    ('Albeck', 'ALDO', 'Tan', 6, 1899, 5, './public/images/shoes/albeck.png'),
+    ('Magio 52 loafer', 'MAZERATA', 'Dark Brown', 7, 551, 6, './public/images/shoes/magio-52-loafer.png'),
+    ('Wingstroll', 'ALDO', 'Black', 9, 1699, 10, './public/images/shoes/wingstroll.png'),
+    ('Matey leather', 'STEVE MADDEN', 'Black', 6, 250, 4, './public/images/shoes/matey-leather.png'),
+    ('Grazie 61 canvas', 'MAZERATA', 'Grey', 8, 899, 8, './public/images/shoes/grazie-61-canvas.png'),
+    ('Ybiari', 'CALL IT SPRING', 'Tan', 10, 899, 12, './public/images/shoes/ybiari.png'),
+    ('Oxford leather lace up', 'POLO', 'Burgundy', 8, 2999, 5, './public/images/shoes/oxford-leather-lace-up.png'),
+    ('Brogue gibson leather lace up', 'POLO', 'Brown', 7, 2099, 9, './public/images/shoes/brogue-toe-cap-gibson-leather-lace-up.png'),
+    ('Sheldon slip-on', 'GINO PAOLI', 'Grey', 6, 599, 7, './public/images/shoes/sheldon-slip-on.png'),
+    ('Lindo leather', 'STEVE MADDEN', 'Dark Brown', 9, 1999, 3, './public/images/shoes/lindo-leather.png'),
+    ('Burnished gibson leather lace up', 'POLO', 'Dark Brown', 9, 2999, 10, './public/images/shoes/burnished-toe-cap-gibson-leather-lace-up.png');
