@@ -1,0 +1,90 @@
+export default function ShoeCatalogueAPIServices(db) {
+    async function getListOfShoes() {
+        const getShoeListQuery = `SELECT * FROM shoes;`
+
+        const shoeList = await db.many(getShoeListQuery)
+
+        return shoeList;
+    }
+
+    async function getListOfShoesByBrand(brand) {
+
+        const shoeList = await getListOfShoes();
+
+        let modifiedString;
+
+        if (brand.includes("-")) {
+            modifiedString = brand.replace("-", " ").toUpperCase();
+        } else {
+            modifiedString = brand;
+        }
+
+        const filteredList = await shoeList.filter(item => item.brand === modifiedString)
+
+        return filteredList;
+    }
+
+    async function getListOfShoesBySize(size) {
+
+        const shoeList = await getListOfShoes();
+
+        const filteredList = await shoeList.filter(item => item.size === Number(size))
+
+        return filteredList;
+    }
+
+    async function getListOfShoesByBrandAndSize(brand, size) {
+        const shoeList = await getListOfShoes();
+
+        let modifiedString;
+
+        if (brand.includes("-")) {
+            modifiedString = brand.replace("-", " ").toUpperCase();
+        } else {
+            modifiedString = brand;
+        }
+
+        const filteredList = await shoeList.filter(item => item.brand === modifiedString && item.size === Number(size))
+
+        return filteredList;
+    }
+
+    async function getListOfShoesByColour(colour) {
+        const shoeList = await getListOfShoes();
+
+        let modifiedString;
+
+        if (colour.includes("-")) {
+            modifiedString = colour.replace("-", " ").toLowerCase();
+        } else {
+            modifiedString = colour;
+        }
+
+        const filteredList = await shoeList.filter(item => item.colour.toLowerCase() === modifiedString)
+
+        return filteredList;
+    }
+
+    async function updateStock(shoeId) {
+        const updateStockQuery = `UPDATE shoes SET in_stock = in_stock - 1 WHERE id = $1;`
+
+        await db.none(updateStockQuery, [shoeId])
+    }
+
+    async function addShoe(name, brand, colour, size, price, in_stock, img_src) {
+        const addShoeQuery = `INSERT INTO shoes (name, brand, colour, size, price, in_stock, img_src)
+        VALUES ($1, $2, $3, $4, $5, $6, $7);`
+
+        await db.none(addShoeQuery, [name, brand, colour, size, price, in_stock, img_src])
+    }
+
+    return {
+        getListOfShoes,
+        getListOfShoesByBrand,
+        getListOfShoesBySize,
+        getListOfShoesByBrandAndSize,
+        getListOfShoesByColour,
+        updateStock,
+        addShoe
+    }
+}
