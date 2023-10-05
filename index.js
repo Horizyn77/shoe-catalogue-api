@@ -2,6 +2,7 @@ import express from "express";
 import { engine } from "express-handlebars";
 import 'dotenv/config';
 import pgPromise from 'pg-promise';
+import cors from "cors";
 
 import ShoeCatalogueAPIRoutes from "./routes/shoe-catalogue-api-routes.js";
 import ShoeCatalogueAPIServices from "./services/shoe-catalogue-api-services.js"
@@ -24,6 +25,7 @@ app.use(express.static("public"))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors())
 
 const shoeCatalogueAPIServices = ShoeCatalogueAPIServices(db);
 const shoeCatalogueAPIRoutes = ShoeCatalogueAPIRoutes(shoeCatalogueAPIServices);
