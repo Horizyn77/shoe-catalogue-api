@@ -16,7 +16,7 @@ export default function ShoeCatalogueAPIServices(db) {
         if (brand.includes("-")) {
             modifiedString = brand.replace("-", " ").toUpperCase();
         } else {
-            modifiedString = brand;
+            modifiedString = brand.toUpperCase();
         }
 
         const filteredList = await shoeList.filter(item => item.brand === modifiedString)
@@ -41,7 +41,7 @@ export default function ShoeCatalogueAPIServices(db) {
         if (brand.includes("-")) {
             modifiedString = brand.replace("-", " ").toUpperCase();
         } else {
-            modifiedString = brand;
+            modifiedString = brand.toUpperCase();
         }
 
         const filteredList = await shoeList.filter(item => item.brand === modifiedString && item.size === Number(size))
@@ -57,7 +57,7 @@ export default function ShoeCatalogueAPIServices(db) {
         if (colour.includes("-")) {
             modifiedString = colour.replace("-", " ").toLowerCase();
         } else {
-            modifiedString = colour;
+            modifiedString = colour.toLowerCase();
         }
 
         const filteredList = await shoeList.filter(item => item.colour.toLowerCase() === modifiedString)
