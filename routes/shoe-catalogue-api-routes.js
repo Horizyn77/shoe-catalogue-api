@@ -92,6 +92,61 @@ export default function ShoeCatalogueAPIRoutes(shoeCatalogueAPIServices) {
 
     }
 
+    async function getShoesByBrandAndColour(req, res) {
+        const brand = req.params.brandname;
+        const colour = req.params.colour;
+
+        try {
+            const data = await shoeCatalogueAPIServices.getListOfShoesByBrandAndColour(brand, colour);
+
+            res.json(data)
+        }
+
+        catch(err) {
+            res.json({
+                status: "error",
+                error: err.stack
+            })
+        }
+    }
+
+    async function getShoesByBrandAndColourAndSize(req, res) {
+        const brand = req.params.brandname;
+        const colour = req.params.colour;
+        const size = req.params.size;
+
+        try {
+            const data = await shoeCatalogueAPIServices.getListOfShoesByBrandAndColourAndSize(brand, colour, size)
+
+            res.json(data)
+        }
+
+        catch(err) {
+            res.json({
+                status: "error",
+                error: err.stack
+            })
+        }
+    }
+
+    async function getShoesByColourAndSize(req, res) {
+        const colour = req.params.colour;
+        const size = req.params.size;
+
+        try {
+            const data = await shoeCatalogueAPIServices.getListOfShoesByColourAndSize(colour, size);
+
+            res.json(data)
+        }
+
+        catch(err) {
+            res.json({
+                status: "error",
+                error: err.stack
+            })
+        }
+    }
+
     async function updateShoeStock(req, res) {
         const shoeId  = req.params.id;
 
@@ -137,6 +192,9 @@ export default function ShoeCatalogueAPIRoutes(shoeCatalogueAPIServices) {
         getShoesBySize,
         getShoesByBrandAndSize,
         getShoesByColour,
+        getShoesByBrandAndColour,
+        getShoesByBrandAndColourAndSize,
+        getShoesByColourAndSize,
         updateShoeStock,
         addNewShoe
     }

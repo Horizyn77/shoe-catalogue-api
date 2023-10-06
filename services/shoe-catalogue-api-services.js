@@ -65,6 +65,68 @@ export default function ShoeCatalogueAPIServices(db) {
         return filteredList;
     }
 
+    async function getListOfShoesByBrandAndColour(brand, colour) {
+        const shoeList = await getListOfShoes();
+
+        let modifiedStringBrand;
+        let modifiedStringColour;
+
+        if (brand.includes("-")) {
+            modifiedStringBrand = brand.replace("-", " ").toUpperCase();
+        } else {
+            modifiedStringBrand = brand.toUpperCase();
+        }
+
+        if (colour.includes("-")) {
+            modifiedStringColour = colour.replace("-", " ").toLowerCase();
+        } else {
+            modifiedStringColour = colour.toLowerCase();
+        }
+
+        const filteredList = await shoeList.filter(item => item.brand === modifiedStringBrand && item.colour.toLowerCase() === modifiedStringColour)
+
+        return filteredList;
+    }
+
+    async function getListOfShoesByBrandAndColourAndSize(brand, colour, size) {
+        const shoeList = await getListOfShoes();
+
+        let modifiedStringBrand;
+        let modifiedStringColour;
+
+        if (brand.includes("-")) {
+            modifiedStringBrand = brand.replace("-", " ").toUpperCase();
+        } else {
+            modifiedStringBrand = brand.toUpperCase();
+        }
+
+        if (colour.includes("-")) {
+            modifiedStringColour = colour.replace("-", " ").toLowerCase();
+        } else {
+            modifiedStringColour = colour.toLowerCase();
+        }
+
+        const filteredList = await shoeList.filter(item => item.brand === modifiedStringBrand && item.colour.toLowerCase() === modifiedStringColour && item.size === Number(size))
+
+        return filteredList;
+    }
+
+    async function getListOfShoesByColourAndSize(colour, size) {
+        const shoeList = await getListOfShoes();
+
+        let modifiedStringColour;
+
+        if (colour.includes("-")) {
+            modifiedStringColour = colour.replace("-", " ").toLowerCase();
+        } else {
+            modifiedStringColour = colour.toLowerCase();
+        }
+
+        const filteredList = await shoeList.filter(item => item.colour.toLowerCase() === modifiedStringColour && item.size === Number(size))
+
+        return filteredList;
+    }
+
     async function updateStock(shoeId) {
         const updateStockQuery = `UPDATE shoes SET in_stock = in_stock - 1 WHERE id = $1;`
 
@@ -84,6 +146,9 @@ export default function ShoeCatalogueAPIServices(db) {
         getListOfShoesBySize,
         getListOfShoesByBrandAndSize,
         getListOfShoesByColour,
+        getListOfShoesByBrandAndColour,
+        getListOfShoesByBrandAndColourAndSize,
+        getListOfShoesByColourAndSize,
         updateStock,
         addShoe
     }

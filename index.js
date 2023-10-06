@@ -40,6 +40,12 @@ app.get("/api/shoes/brand/:brandname/size/:size", shoeCatalogueAPIRoutes.getShoe
 
 app.get("/api/shoes/colour/:colour", shoeCatalogueAPIRoutes.getShoesByColour)
 
+app.get("/api/shoes/brand/:brandname/colour/:colour", shoeCatalogueAPIRoutes.getShoesByBrandAndColour)
+
+app.get("/api/shoes/brand/:brandname/colour/:colour/size/:size", shoeCatalogueAPIRoutes.getShoesByBrandAndColourAndSize)
+
+app.get("/api/shoes/colour/:colour/size/:size", shoeCatalogueAPIRoutes.getShoesByColourAndSize)
+
 app.post("/api/shoes/sold/:id", shoeCatalogueAPIRoutes.updateShoeStock)
 
 app.post("/api/shoes", shoeCatalogueAPIRoutes.addNewShoe)
