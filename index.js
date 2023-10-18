@@ -1,5 +1,4 @@
 import express from "express";
-import { engine } from "express-handlebars";
 import 'dotenv/config';
 import pgPromise from 'pg-promise';
 import cors from "cors";
@@ -15,12 +14,6 @@ const db = pgp(connectionString)
 
 const PORT = process.env.PORT || 3010;
 
-app.engine("handlebars", engine({
-    layoutsDir: "./views/layouts"
-}));
-
-app.set("view engine", "handlebars");
-app.set("views", "./views");
 app.use(express.static("public"))
 
 app.use(express.json());
