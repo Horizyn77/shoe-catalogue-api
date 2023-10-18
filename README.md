@@ -1,4 +1,4 @@
-# Shoe Catalogue API 👞
+# Shoe Catalogue API
 
 URL		 | HTTP VERB  | Description
 ---------|------------|------
