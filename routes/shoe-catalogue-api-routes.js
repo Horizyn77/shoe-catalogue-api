@@ -2,8 +2,8 @@ export default function ShoeCatalogueAPIRoutes(shoeCatalogueAPIServices) {
     async function getAllShoes(req, res) {
 
         try {
-            const data = await shoeCatalogueAPIServices.getListOfShoes()
-
+            const data = await shoeCatalogueAPIServices.getListOfShoes();
+            
             res.json(data)
         }
 
