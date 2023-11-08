@@ -14,7 +14,7 @@ export default function ShoeCatalogueAPIServices(db) {
         let modifiedString;
 
         if (brand.includes("-")) {
-            modifiedString = brand.replace("-", " ").toUpperCase();
+            modifiedString = brand.replaceAll("-", " ").toUpperCase();
         } else {
             modifiedString = brand.toUpperCase();
         }
@@ -39,7 +39,7 @@ export default function ShoeCatalogueAPIServices(db) {
         let modifiedString;
 
         if (brand.includes("-")) {
-            modifiedString = brand.replace("-", " ").toUpperCase();
+            modifiedString = brand.replaceAll("-", " ").toUpperCase();
         } else {
             modifiedString = brand.toUpperCase();
         }
@@ -55,7 +55,7 @@ export default function ShoeCatalogueAPIServices(db) {
         let modifiedString;
 
         if (colour.includes("-")) {
-            modifiedString = colour.replace("-", " ").toLowerCase();
+            modifiedString = colour.replaceAll("-", " ").toLowerCase();
         } else {
             modifiedString = colour.toLowerCase();
         }
@@ -72,13 +72,13 @@ export default function ShoeCatalogueAPIServices(db) {
         let modifiedStringColour;
 
         if (brand.includes("-")) {
-            modifiedStringBrand = brand.replace("-", " ").toUpperCase();
+            modifiedStringBrand = brand.replaceAll("-", " ").toUpperCase();
         } else {
             modifiedStringBrand = brand.toUpperCase();
         }
 
         if (colour.includes("-")) {
-            modifiedStringColour = colour.replace("-", " ").toLowerCase();
+            modifiedStringColour = colour.replaceAll("-", " ").toLowerCase();
         } else {
             modifiedStringColour = colour.toLowerCase();
         }
@@ -95,13 +95,13 @@ export default function ShoeCatalogueAPIServices(db) {
         let modifiedStringColour;
 
         if (brand.includes("-")) {
-            modifiedStringBrand = brand.replace("-", " ").toUpperCase();
+            modifiedStringBrand = brand.replaceAll("-", " ").toUpperCase();
         } else {
             modifiedStringBrand = brand.toUpperCase();
         }
 
         if (colour.includes("-")) {
-            modifiedStringColour = colour.replace("-", " ").toLowerCase();
+            modifiedStringColour = colour.replaceAll("-", " ").toLowerCase();
         } else {
             modifiedStringColour = colour.toLowerCase();
         }
@@ -117,7 +117,7 @@ export default function ShoeCatalogueAPIServices(db) {
         let modifiedStringColour;
 
         if (colour.includes("-")) {
-            modifiedStringColour = colour.replace("-", " ").toLowerCase();
+            modifiedStringColour = colour.replaceAll("-", " ").toLowerCase();
         } else {
             modifiedStringColour = colour.toLowerCase();
         }
