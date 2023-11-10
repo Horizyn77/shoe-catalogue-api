@@ -29,5 +29,6 @@ CREATE TABLE cart (
 CREATE TABLE cart_items (
     id SERIAL PRIMARY KEY,
     cart_id INT REFERENCES cart(id),
-    shoe_id INT REFERENCES shoes(id)
+    shoe_id INT REFERENCES shoes(id),
+    quantity INT NOT NULL
 )
