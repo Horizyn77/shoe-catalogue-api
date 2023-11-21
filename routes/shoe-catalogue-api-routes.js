@@ -149,9 +149,10 @@ export default function ShoeCatalogueAPIRoutes(shoeCatalogueAPIServices) {
 
     async function updateShoeStock(req, res) {
         const shoeId  = req.params.id;
+        const total = req.body.total;
 
         try {
-            await shoeCatalogueAPIServices.updateStock(shoeId);
+            await shoeCatalogueAPIServices.updateStock(shoeId, total);
 
             res.json({
                 status: "success"
