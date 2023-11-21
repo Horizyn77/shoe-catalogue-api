@@ -1,6 +1,6 @@
 export default function ShoeCatalogueAPIServices(db) {
     async function getListOfShoes() {
-        const getShoeListQuery = `SELECT * FROM shoes;`
+        const getShoeListQuery = `SELECT * FROM shoes ORDER BY id;`
 
         const shoeList = await db.many(getShoeListQuery)
 
