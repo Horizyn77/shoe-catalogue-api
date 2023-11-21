@@ -130,7 +130,7 @@ export default function ShoeCatalogueAPIServices(db) {
     async function updateStock(shoeId, total) {
         const updateStockQuery = `UPDATE shoes SET in_stock = in_stock - $2 WHERE id = $1;`
 
-        await db.none(updateStockQuery, [shoeId, total])
+        await db.none(updateStockQuery, [shoeId, total]);
     }
 
     async function addShoe(name, brand, colour, size, price, in_stock, img_src) {
