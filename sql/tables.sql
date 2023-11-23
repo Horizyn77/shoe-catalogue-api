@@ -32,3 +32,9 @@ CREATE TABLE cart_items (
     shoe_id INT REFERENCES shoes(id),
     quantity INT NOT NULL
 )
+
+CREATE TABLE wishlist (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id),
+    shoe_id INT REFERENCES shoes(id)
+)
