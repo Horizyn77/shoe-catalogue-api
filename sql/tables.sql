@@ -23,7 +23,8 @@ CREATE TABLE cart (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
     status VARCHAR(255) NOT NULL,
-    order_number VARCHAR(255)
+    order_number VARCHAR(255),
+    timestamp VARCHAR(255)
 )
 
 CREATE TABLE cart_items (
